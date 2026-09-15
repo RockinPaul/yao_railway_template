@@ -45,7 +45,9 @@ Desktop and Android clients connect to the same URL. The Open API is under `/v1`
   `YAO_ROOT_PASSWORD` through the model layer (bcrypt) — verified against the stored hash: the
   upstream default is rejected, yours is accepted. It re-applies on every boot, so the Railway
   variable is the source of truth and a redeploy restores it. The entrypoint refuses to start with
-  an empty or short value.
+  an empty or short value. Upstream hashes at bcrypt cost 4 (the library minimum), so keep the
+  generated 24-character secret rather than replacing it with something memorable — the secret's
+  entropy, not the hash, is what protects a leaked database file.
 - **The app's `.env` beats your variables.** Yao loads `<app>/.env` with `godotenv.Overload`, so any
   key in that file overrides the process environment. First boot writes `YAO_HOST`, `YAO_PORT`,
   `YAO_ENV` there; the entrypoint rewrites them to `127.0.0.1`, `5099`, `production` on every boot
