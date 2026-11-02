@@ -31,7 +31,7 @@ Railway's private network reach it.
 
 - A volume for the application and its database, which the template creates.
 - A model provider key — DeepSeek, OpenAI, Anthropic, Moonshot, OpenRouter, Google, Groq,
-  Mistral, xAI and others are wired as connectors that read `<PROVIDER>_API_KEY` from the
+  Mistral, xAI and others are wired as connectors that read `PROVIDER_API_KEY` (for example `XAI_API_KEY`) from the
   environment. Add yours to the service; none is required to deploy.
 
 ### Deployment Dependencies
