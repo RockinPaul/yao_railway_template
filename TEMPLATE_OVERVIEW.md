@@ -3,7 +3,7 @@
 [Yao](https://github.com/YaoApp/yao) is a self-hosted hub for AI agents: isolated workspaces, a
 task board that turns conversations into tracked work, a dashboard, an Open API with SSE and
 WebSocket, built-in MCP tools, and desktop and Android clients that connect to the server you
-run. This template deploys the upstream Yao image (1.0.0-rc22) on Railway, with one addition that
+run. This template deploys the upstream Yao image (1.0.0) on Railway, with one addition that
 a public URL requires: the root account's password is yours, generated for this deployment.
 
 ## About Hosting Yao
@@ -44,7 +44,7 @@ Railway's private network reach it.
 
 ### Implementation Details
 
-One service, `yao`: `yaoapp/yao:1.0.0-rc22` with `su-exec`, `socat` and `tini` added. Health check
+One service, `yao`: `yaoapp/yao:1.0.0` with `su-exec`, `socat` and `tini` added. Health check
 `/` (200 unauthenticated). Volume at `/data`; the application lives in `/data/yao` — a
 subdirectory, because the mount root holds `lost+found` and Yao refuses to initialise a non-empty
 directory. Runs as the image's `yao` user. The engine binds `127.0.0.1:5099`; socat listens on

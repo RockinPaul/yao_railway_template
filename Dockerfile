@@ -1,7 +1,7 @@
 # Yao Agents — self-hosted hub for agents, workspaces and a task board
 # (https://github.com/YaoApp/yao). Upstream publishes multi-arch images, so this is a
 # thin pin plus an entrypoint that makes a first boot safe on a public URL.
-ARG YAO_VERSION=1.0.0-rc22
+ARG YAO_VERSION=1.0.0
 FROM yaoapp/yao:${YAO_VERSION}
 
 # The base image runs as `yao`; the entrypoint needs root briefly to prepare the volume,
