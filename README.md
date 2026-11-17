@@ -11,7 +11,7 @@ the one change a public URL demands: the root account gets a password that is yo
 
 | Service | Runs | Public | Role |
 |---|---|---|---|
-| `yao` | `yaoapp/yao:1.0.0-rc22` (upstream multi-arch image) + socat relay | **yes** | Engine, dashboard, Open API. App and SQLite database on `/data`. |
+| `yao` | `yaoapp/yao:1.0.0` (upstream multi-arch image) + socat relay | **yes** | Engine, dashboard, Open API. App and SQLite database on `/data`. |
 
 One service. The engine speaks plain HTTP; `socat` in front gives it a dual-stack listener (see
 below).
