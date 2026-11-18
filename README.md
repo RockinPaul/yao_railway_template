@@ -99,5 +99,4 @@ the volume first.
 ```
 Dockerfile       FROM yaoapp/yao:<pin> + su-exec, socat, tini
 entrypoint.sh    fail-closed password check, volume prep, first-boot init, .env patch, root rotation, relay, su-exec → yao start
-railway.json     health check /, restart policy
 ```
